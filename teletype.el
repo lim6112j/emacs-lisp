@@ -54,51 +54,9 @@ with a pause between each character."
   (interactive)
   (teletype-in-new-buffer
    0.1
-   0.2
-   "test.el"
-   (concat
-    "Hello Emacs user,\n\n"
-    " teletype-like printing can be useful to\n"
-    "keep the user focused on a brief tutorial.\n\n"
-    " You are currently reading at 10 cps, with\n"
-    "pauses of 0.5 sec at punctuation and newlines.\n"
-    " If this demo annoys you, stop it with C-g.\n\n"
-    " To run your own demo, you may load teletype.el and\n"
-    "execute the following LISP function:\n\n"
-    " (teletype-in-new-buffer 0.1 0.5 demo-title all-your-text)\n\n"
-    "or use the interactive command `teletype-file'.\n\n"
-    "Future improvements could be:\n\n"
-    "Hello Emacs user,\n\n"
-    "Hello Emacs user,\n\n"
-    " teletype-like printing can be useful to\n"
-    "keep the user focused on a brief tutorial.\n\n"
-    " You are currently reading at 10 cps, with\n"
-    "pauses of 0.5 sec at punctuation and newlines.\n"
-    " If this demo annoys you, stop it with C-g.\n\n"
-    " To run your own demo, you may load teletype.el and\n"
-    "execute the following LISP function:\n\n"
-    " (teletype-in-new-buffer 0.1 0.5 demo-title all-your-text)\n\n"
-    "or use the interactive command `teletype-file'.\n\n"
-    "Future improvements could be:\n\n"
-    " teletype-like printing can be useful to\n"
-    "keep the user focused on a brief tutorial.\n\n"
-    " You are currently reading at 10 cps, with\n"
-    "pauses of 0.5 sec at punctuation and newlines.\n"
-    " If this demo annoys you, stop it with C-g.\n\n"
-    " To run your own demo, you may load teletype.el and\n"
-    "execute the following LISP function:\n\n"
-    " (teletype-in-new-buffer 0.1 0.5 demo-title all-your-text)\n\n"
-    "or use the interactive command `teletype-file'.\n\n"
-    "Future improvements could be:\n\n"
-    " - a resumable \"pause\" key\n"
-    " - support for text coloring\n"
-    " - support for typewriter sound (tick-tick-tick)\n"
-    " - configurable regexps for pauses (so for example you\n"
-    " don't have to ... wait so long at the ellipsys\n"
-    " triple dots)\n\n"
-    " Hope you enjoyed, regards.\n\n"
-    " The Software Bin\n"
-    " http://github.com/thesoftwarebin\n")))
+   0.3
+   (buffer-name)
+   ()))
 
 (defun teletype-file ()
   "Ask for a filename, a cps rate, a long-pause factor,
