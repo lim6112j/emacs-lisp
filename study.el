@@ -66,3 +66,14 @@
   "Insert "yay!" at the cursor position"
   (interactive)
   (insert "Yay!"))
+
+; text manipulation
+; (point)
+; (region-beginning)
+
+(geben-remote-p '(133.186.246.195))
+
+(load-file "./animate")
+(animate-string "anim" 0 0)
+(animate-sequence '("hello" "world" "be" "happy") 4)
+(animate-birthday-present "lim")
