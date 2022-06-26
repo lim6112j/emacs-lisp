@@ -49,7 +49,7 @@ with a pause between each character."
   (erase-buffer)
   (teletype-text contents pause-between-keys pause-between-rows))
 
-(defun teletype-run-demo ()
+(defun teletype-run ()
   "Demonstrate teletyping by using the `teletype-in-new-buffer' function."
   (interactive)
   (teletype-in-new-buffer
