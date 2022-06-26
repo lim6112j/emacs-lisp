@@ -129,6 +129,7 @@ in the current window."
 	(animate-step characters (/ i 1.0 animate-n-steps))
 	;; Make sure buffer is displayed starting at the beginning.
 	(set-window-start nil 1)
+        ;;(set-window-redisplay-end-trigger nil vpos)
 	;; Display it, and wait just a little while.
 	(sit-for .05)
 	;; Now undo the changes we made in the buffer.
@@ -153,11 +154,7 @@ Strings will be separated from each other by SPACE lines.
  When the variable `animation-buffer-name' is non-nil display
 animation in the buffer named by variable's value, creating the
 buffer if one does not exist."
-  (let ((vpos (/ (- (window-height)
-		    1 ;; For the mode-line
-		    (* (1- (length list-of-strings)) space)
-		    (length list-of-strings))
-		 2)))
+  (let ((vpos 0))
     ;;(switch-to-buffer (get-buffer-create
                        ;;(or animation-buffer-name
                            ;;"*Animation*")))
@@ -167,7 +164,7 @@ buffer if one does not exist."
       (animate-string (car list-of-strings) vpos 0)
       (setq vpos (+ vpos space 1))
       (setq list-of-strings (cdr list-of-strings)))
-    (lsp)
+      (scroll-down-line)
     ))
 
 ;;;###autoload

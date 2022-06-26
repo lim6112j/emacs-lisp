@@ -24,7 +24,7 @@
   (setq contents (buffer-string))
   (setq space 0)
   (setq list-of-strings (split-string contents "\n"))
-  (animate-sequence list-of-strings 0))
+  (animate-sequence list-of-strings space))
 (animate-buffer)
 (provide 'animate-buffer)
 ;;; animate-buffer.el ends here
