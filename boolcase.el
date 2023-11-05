@@ -20,7 +20,7 @@
 ;;; Code:
 ;;;  참조
 ;;https://www.youtube.com/watch?v=QaX3AaK3_Lk&list=PL1U4NsGzju92WWGlyHbGS1uZKIoERY07L&index=5
-(defvar boolcase-mode-words '("true "false)
+(defvar boolcase-mode-words '("true" "false")
   "Words to capitalize")
 (defun boolcase-mode-check ()
   "Check if we capitalize or not"
@@ -31,7 +31,8 @@
   (save-excursion
     (copy-region-as-kill (point) (progn (backward-sexp) (point)))
     (when (member (current-kill 0) boolcase-mode-words)
-      (capitalize-word 1))))
+      (capitalize-word 1))
+    (setq kill-ring (cdr kill-ring))))
 (define-minor-mode boolcase-mode
   "automatically capitalze booleans"
   :lighter " BC"
@@ -40,5 +41,4 @@
                 'boolcase-mode-check nil t)
     (remove-hook 'post-self-insert-hook
                  'boolcase-mode-check t)))
-(provide 'boolcase)
 ;;; boolcase.el ends here
